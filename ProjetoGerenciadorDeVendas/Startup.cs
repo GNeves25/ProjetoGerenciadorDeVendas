@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using ProjetoGerenciadorDeVendas.Models;
+using ProjetoGerenciadorDeVendas.Data;
 
 namespace ProjetoGerenciadorDeVendas
 {
@@ -39,14 +40,17 @@ namespace ProjetoGerenciadorDeVendas
             services.AddDbContext<ProjetoGerenciadorDeVendasContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("ProjetoGerenciadorDeVendasContext"), builder =>
                     builder.MigrationsAssembly("ProjetoGerenciadorDeVendas")));
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
