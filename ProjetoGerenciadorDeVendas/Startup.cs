@@ -37,7 +37,8 @@ namespace ProjetoGerenciadorDeVendas
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<ProjetoGerenciadorDeVendasContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ProjetoGerenciadorDeVendasContext")));
+                    options.UseMySql(Configuration.GetConnectionString("ProjetoGerenciadorDeVendasContext"), builder =>
+                    builder.MigrationsAssembly("ProjetoGerenciadorDeVendas")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
