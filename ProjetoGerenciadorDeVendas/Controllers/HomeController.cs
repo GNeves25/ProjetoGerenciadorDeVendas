@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoGerenciadorDeVendas.Models;
+using ProjetoGerenciadorDeVendas.Models.ViewsModels;
 
 namespace ProjetoGerenciadorDeVendas.Controllers
 {

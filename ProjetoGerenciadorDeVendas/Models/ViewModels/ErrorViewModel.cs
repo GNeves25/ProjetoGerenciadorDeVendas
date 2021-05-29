@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjetoGerenciadorDeVendas.Models
+namespace ProjetoGerenciadorDeVendas.Models.ViewsModels
 {
     public class ErrorViewModel
     {
