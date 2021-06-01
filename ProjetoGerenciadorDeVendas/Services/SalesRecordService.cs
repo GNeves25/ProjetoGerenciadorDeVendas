@@ -27,7 +27,7 @@ namespace ProjetoGerenciadorDeVendas.Services
 
             if (maxDate.HasValue)
             {
-                result = result.Where(x => x.Date >= maxDate.Value);
+                result = result.Where(x => x.Date <= maxDate.Value);
             }
 
             return await result
