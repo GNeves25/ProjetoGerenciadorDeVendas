@@ -18,14 +18,14 @@ namespace ProjetoGerenciadorDeVendas.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Application created to study the languages:";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["link"] = "Your contact page.";
 
             return View();
         }
